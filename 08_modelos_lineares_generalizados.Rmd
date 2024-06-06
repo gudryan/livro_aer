@@ -711,10 +711,10 @@ A diagnose não só nos disse que o modelo possui *overdispersion*, como também
 hur_NB <- glmmTMB(Raillietiella_mottae ~ CRC + Sexo * Especie, zi = ~., data = parasitas, family = truncated_nbinom2) 
 
 # zero-inflated Poisson
-ziNB_mod2 <- glmmTMB(Raillietiella_mottae ~ CRC + Sexo * Especie, zi = ~., data = parasitas, family = nbinom2) 
+ziNB_mod2 <- glmmTMB(Raillietiella_mottae ~ CRC + Sexo * Especie, zi = ~., data = parasitas, family = poisson) 
 
 # zero-inflated Negative binomial
-ziP_mod2 <- glmmTMB(Raillietiella_mottae ~ CRC + Sexo * Especie, zi = ~., data = parasitas, family = poisson) 
+ziP_mod2 <- glmmTMB(Raillietiella_mottae ~ CRC + Sexo * Especie, zi = ~., data = parasitas, family = nbinom2) 
 ```
 
 **Diagnose**
